@@ -12,6 +12,6 @@ In an N-body system, every body gravitationally interacts with every other body.
 
 For two bodies, Sir Isaac Newton gave us:
 
-\[
+$$
 F = G\frac{m_1m_2}{r^2}
-\]
+$$
