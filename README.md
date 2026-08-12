@@ -66,5 +66,40 @@ I want to use it ti explore things like:
 
 ## Planned Features
 
-- [x] Basic two-body simulation
-- [ ] 
+- [ ] Basic two-body simulation
+- [ ] General N-body simulation
+- [ ] Numerical integration
+- [ ] Real-time visualizzation
+- [ ] Adjustable simulation parameters
+- [ ] Orbital trails
+- [ ] Energy conservation monitoring
+- [ ] Momentum conservatuon monitoring
+- [ ] Center-of-mass tracking
+- [ ] Collision handling
+- [ ] Multiple predefined systems
+- [ ] User-defined bodies
+- [ ] Performance improvements
+- [ ] Documentation of the numerical methods
+
+## Tech Stack
+- C++
+- CMake
+- [Visualization library]
+
+## Why C++?
+
+I'm currently learning C++, and this seemed like a much better way to learn it than making another random calculator or guessing-game program.
+
+It also makes sense for a simulation like this since eventually I want to experiment with larger numbers of bodies and better numerical methods.
+
+So this project is partly a physics project, partly a computational physics project, and partly me finding increasingly complicated ways to make C++ complain 🐈
+
+## Project Status
+
+🟨 In development
+
+The simulation is being built step by step, starting from the basic physics and gradually adding more functionality.
+
+The goal is to understand each part rather than just simply throw together a working program and pretend I know why it works...
+
+#### Thank you...!
