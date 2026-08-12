@@ -37,9 +37,7 @@ $$
 and the gravitational force between two bodies is
 
 $$
-\mathbf{F}_{ij}
-=
-G\frac{m_i m_j}{r_{ij}^2}\hat{\mathbf r}_{ij}
+\mathbf{F}_{ij} = G\frac{m_i m_j}{r_{ij}^2}\hat{\mathbf r}_{ij}
 $$
 
 The total force on a body is the vector sum of the gravitational force from every other body.
