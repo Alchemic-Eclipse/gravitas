@@ -15,3 +15,56 @@ For two bodies, Sir Isaac Newton gave us:
 $$
 F = G\frac{m_1m_2}{r^2}
 $$
+
+Though for N bodies, things get a little more interesting because every body has to account for the gravitational pull from all the others.
+
+So for each body, we calculate the total force acting on it and use that to update it's motion over time.
+
+Simple enough.
+
+Until you actually try to simulate it 🗿✌🏻
+
+## Physics
+
+The simulation is based on classical Newtonian mechanics.
+
+For each body:
+
+$$
+\mathbf{F} = m\mathbf{a}
+$$
+
+and the gravitational force between two bodies is
+
+$$
+\mathbf{F}_{ij}
+=
+G\frac{m_i m_j}{r_{ij}^2}\hat{\mathbf r}_{ij}
+$$
+
+The total force on a body is the vector sum of the gravitational force from every other body.
+
+The interesting part is what happens after repeating this calculational thousands of times.
+
+Especially when the system stops behaving nicely. Because apparently 3 objects interacting through gravity wasn't complicated enough. 😭🤷🏻‍♂️
+
+## Goals
+
+I don't want this to just be a pretty animation of planets going in circles.
+
+I want to use it ti explore things like:
+
+- orbital dynamics
+- conservation of energy
+- conservation of momentum
+- center of mass
+- numerical integration (of various types)
+- stability and numerical error
+- chaotic systems
+- different initial conditions
+- how small changes can competely change a system's future
+
+## Planned Features
+
+- [ ] Basic two-body simulation
+- [ ] 
