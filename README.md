@@ -1,6 +1,6 @@
 # Gravitas
 
-A C++ N-body gravitational simulatior (and a lot more)
+A C++ N-body gravitational simulator (and a lot more)
 
 Basically, I wanted to see what happens when you let multiple bodies pull on each other through gravity and then just... let the physics do its thing.
 
@@ -18,7 +18,7 @@ $$
 
 Though for N bodies, things get a little more interesting because every body has to account for the gravitational pull from all the others.
 
-So for each body, we calculate the total force acting on it and use that to update it's motion over time.
+So for each body, we calculate the total force acting on it and use that to update its motion over time.
 
 Simple enough.
 
@@ -44,7 +44,7 @@ $$
 
 The total force on a body is the vector sum of the gravitational force from every other body.
 
-The interesting part is what happens after repeating this calculational thousands of times.
+The interesting part is what happens after repeating this calculations thousands of times.
 
 Especially when the system stops behaving nicely. Because apparently 3 objects interacting through gravity wasn't complicated enough. 😭🤷🏻‍♂️
 
@@ -52,7 +52,7 @@ Especially when the system stops behaving nicely. Because apparently 3 objects i
 
 I don't want this to just be a pretty animation of planets going in circles.
 
-I want to use it ti explore things like:
+I want to use it to explore things like:
 
 - orbital dynamics
 - conservation of energy
@@ -62,18 +62,18 @@ I want to use it ti explore things like:
 - stability and numerical error
 - chaotic systems
 - different initial conditions
-- how small changes can competely change a system's future
+- how small changes can completely change a system's future
 
 ## Planned Features
 
 - [ ] Basic two-body simulation
 - [ ] General N-body simulation
 - [ ] Numerical integration
-- [ ] Real-time visualizzation
+- [ ] Real-time visualization
 - [ ] Adjustable simulation parameters
 - [ ] Orbital trails
 - [ ] Energy conservation monitoring
-- [ ] Momentum conservatuon monitoring
+- [ ] Momentum conservation monitoring
 - [ ] Center-of-mass tracking
 - [ ] Collision handling
 - [ ] Multiple predefined systems
