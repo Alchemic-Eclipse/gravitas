@@ -66,5 +66,5 @@ I want to use it ti explore things like:
 
 ## Planned Features
 
-- [ ] Basic two-body simulation
+- [x] Basic two-body simulation
 - [ ] 
