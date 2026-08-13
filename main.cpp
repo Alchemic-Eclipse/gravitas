@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 struct Vector3 {
       double x;
@@ -21,6 +22,28 @@ Vector3 add(Vector3 a, Vector3 b) {
    result.z = a.z + b.z;
    return result;
 }
+Vector3 subtract(Vector3 a, Vector3 b) {
+   Vector3 result{};
+
+   result.x = a.x - b.x;
+   result.y = a.y - b.y;
+   result.z = a.z - b.z;
+   return result;
+}
+
+Vector3 multiply(Vector3 a, double scalar) {
+   Vector3 result{};
+
+   result.x = a.x * scalar;
+   result.y = a.y * scalar;
+   result.z = a.z * scalar;
+   return result;
+}
+
+double magnitude(Vector3 a) {
+   double c = sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z));
+   return c;
+}
 
 int main() {
 
@@ -37,7 +60,10 @@ int main() {
 
    const double dt = 1.0; // sec
 
+   // Testing
+   Vector3 a {1.0, 1.0, 1.0};
 
+   std::cout << magnitude(a);
 }
 
 
