@@ -4,4 +4,12 @@ project(gravitas)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(gravitas main.cpp)
+find_package(raylib REQUIRED)
+
+add_executable(gravitas main.cpp
+        physics.cpp
+        physics.h
+        renderer.cpp
+        renderer.h)
+
+target_link_libraries(gravitas PRIVATE raylib)
