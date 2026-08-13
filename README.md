@@ -74,9 +74,9 @@ I want to use it to explore things like:
 
 ### Phase 2
 
-- [ ] 3D visualization
-- [ ] Camera
-- [ ] Bodies rendered as spheres/points
+- [x] 3D visualization
+- [x] Camera
+- [x] Bodies rendered as spheres/points
 - [ ] Trails
 - [ ] Adjustable timestep
 - [ ] Pause/reset

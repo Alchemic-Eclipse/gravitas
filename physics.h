@@ -1,6 +1,6 @@
 #pragma once
 
-struct Vector3 {
+struct PhysicsVector3 {
     double x;
     double y;
     double z;
@@ -8,15 +8,15 @@ struct Vector3 {
 
 struct Body {
     double m;
-    Vector3 position;
-    Vector3 velocity;
-    Vector3 acceleration;
+    PhysicsVector3 position;
+    PhysicsVector3 velocity;
+    PhysicsVector3 acceleration;
 };
 
-Vector3 add(Vector3 a, Vector3 b);
-Vector3 subtract(Vector3 a, Vector3 b);
-Vector3 multiply(Vector3 a, double scalar);
+PhysicsVector3 add(PhysicsVector3 a, PhysicsVector3 b);
+PhysicsVector3 subtract(PhysicsVector3 a, PhysicsVector3 b);
+PhysicsVector3 multiply(PhysicsVector3 a, double scalar);
 
-double magnitude(Vector3 v);
+double magnitude(PhysicsVector3 v);
 
-Vector3 gravitationalAcceleration(Body a, Body b);
+PhysicsVector3 gravitationalAcceleration(Body a, Body b);
