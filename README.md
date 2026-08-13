@@ -63,21 +63,41 @@ I want to use it to explore things like:
 - how small changes can completely change a system's future
 
 ## Planned Features
+### Phase 1: 
+- [x] 3D Vector3
+- [x] Body
+- [x] Vector operations
+- [x] Gravitational force
+- [x] Acceleration
+- [x] Time integration
+- [x] 2-body orbit
 
-- [ ] Basic two-body simulation
-- [ ] General N-body simulation
-- [ ] Numerical integration
-- [ ] Real-time visualization
-- [ ] Adjustable simulation parameters
-- [ ] Orbital trails
-- [ ] Energy conservation monitoring
-- [ ] Momentum conservation monitoring
-- [ ] Center-of-mass tracking
+### Phase 2
+
+- [ ] 3D visualization
+- [ ] Camera
+- [ ] Bodies rendered as spheres/points
+- [ ] Trails
+- [ ] Adjustable timestep
+- [ ] Pause/reset
+
+### Phase 3
+
+- [ ] General N-body
+- [ ] Multiple bodies
+- [ ] Initial conditions
+- [ ] Energy/momentum diagnostics
 - [ ] Collision handling
-- [ ] Multiple predefined systems
-- [ ] User-defined bodies
+
+### Phase 4
+
+- [ ] Numerical-method experiments
+- [ ] Euler → Verlet / velocity Verlet → RK4
+- [ ] Stability comparisons
 - [ ] Performance improvements
-- [ ] Documentation of the numerical methods
+- [ ] Chaotic systems
+- [ ] Interesting predefined systems
+
 
 ## Tech Stack
 - C++
