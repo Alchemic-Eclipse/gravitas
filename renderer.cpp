@@ -24,11 +24,6 @@ void renderBody(const Body &body, std::vector<Vector3>& trail) {
     };
 
     trail.push_back(position);
-
-    if (trail.size() > 500) {
-        trail.erase(trail.begin());
-    }
-
     DrawSphere(position, 0.2f, DARKBLUE);
 }
 
