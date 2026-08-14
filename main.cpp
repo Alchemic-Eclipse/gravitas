@@ -6,16 +6,16 @@
 
 int main() {
 
-   const double dt = 0.005; // sec
+   double dt = -0.005; // sec
 
-   Body a1{1,0,0,0,0.0,-0.2236,0};
-   Body a2{1,10,0,0,0,0.2236,0};
+   Body a1{1,0,0,0,0,-0.2,-0.1};
+   Body a2{1,10,0,0,0,0.1,0};
 
    initializeRenderer();
 
    while (!WindowShouldClose()) {
 
-      // // Physics Update
+      // Physics Update
       PhysicsVector3 acc1 = gravitationalAcceleration(a1, a2);
       PhysicsVector3 acc2 = gravitationalAcceleration(a2, a1);
 
@@ -24,6 +24,8 @@ int main() {
 
       a2.velocity = add(a2.velocity, multiply(acc2, dt));
       a2.position = add(a2.position, multiply(a2.velocity, dt));
+
+       updateCamera();
 
       // Rendering
      renderFrame(a1, a2);

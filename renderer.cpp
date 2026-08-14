@@ -7,10 +7,10 @@ std::vector<Vector3> trail1;
 std::vector<Vector3> trail2;
 
 void initializeRenderer() {
-    InitWindow(1200, 800, "Gravitas");
+    InitWindow(1450, 800, "Gravitas");
 
     camera.position = {5.0f, 10.0f, 10.0f};
-    camera.target = {5.0f, 0.0f, 0.0f};
+    camera.target = {5.0f, 0.0f, -4.9f};
     camera.up = {0.0f, 1.0f, 0.0f};
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -72,4 +72,18 @@ void renderFrame(const Body &a1, const Body &a2) {
     EndMode3D();
     EndDrawing();
 
+}
+
+void updateCamera() {
+    if (IsKeyDown(KEY_W)) {
+        camera.position.z -= 0.01f;
+    }
+    if (IsKeyDown(KEY_S)) {
+        camera.position.z += 0.01f;
+    }    if (IsKeyDown(KEY_A)) {
+        camera.position.x -= 0.01f;
+    }
+    if (IsKeyDown(KEY_D)) {
+        camera.position.x += 0.01f;
+    }
 }
