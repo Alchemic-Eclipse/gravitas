@@ -16,14 +16,13 @@ void initializeRenderer() {
     camera.projection = CAMERA_PERSPECTIVE;
 }
 
-void renderBody(const Body &body, std::vector<Vector3>& trail) {
+void renderBody(const Body &body) {
     Vector3 position = {
         static_cast<float>(body.position.x),
         static_cast<float>(body.position.y),
         static_cast<float>(body.position.z)
     };
 
-    trail.push_back(position);
     DrawSphere(position, 0.2f, DARKBLUE);
 }
 
@@ -32,12 +31,33 @@ void closeRenderer() {
 }
 
 void renderFrame(const Body &a1, const Body &a2) {
+
+    static int frameCounter = 0;
+    frameCounter++;
+
+    if (frameCounter % 20 == 0) {
+        Vector3 position1 = {
+            static_cast<float>(a1.position.x),
+            static_cast<float>(a1.position.y),
+            static_cast<float>(a1.position.z)
+        };
+
+        Vector3 position2 = {
+            static_cast<float>(a2.position.x),
+            static_cast<float>(a2.position.y),
+            static_cast<float>(a2.position.z)
+        };
+
+        trail1.push_back(position1);
+        trail2.push_back(position2);
+    }
+
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode3D(camera);
 
-    renderBody(a1, trail1);
-    renderBody(a2, trail2);
+    renderBody(a1);
+    renderBody(a2);
 
     for (size_t i = 0; i + 1 < trail1.size(); i++) {
         DrawLine3D(trail1[i], trail1[i + 1], GREEN);

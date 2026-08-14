@@ -8,8 +8,8 @@ int main() {
 
    const double dt = 0.005; // sec
 
-   Body a1{1,0,0,0,0,0.2236,0};
-   Body a2{1,10,0,0,0,-0.2236,0};
+   Body a1{1,0,0,0,0.0,-0.2236,0};
+   Body a2{1,10,0,0,0,0.2236,0};
 
    initializeRenderer();
 
