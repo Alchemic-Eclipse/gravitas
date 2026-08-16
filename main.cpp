@@ -4,7 +4,11 @@
 #include "physics.h"
 #include "renderer.h"
 
+bool paused = false;
+
 int main() {
+
+
 
    double dt = -0.005; // sec
 
@@ -14,15 +18,23 @@ int main() {
    initializeRenderer();
 
    while (!WindowShouldClose()) {
+
+       if (IsKeyPressed(KEY_SPACE)) {
+           paused = !paused;
+       }
+
        // Physics Update
-       PhysicsVector3 acc1 = gravitationalAcceleration(a1, a2);
-       PhysicsVector3 acc2 = gravitationalAcceleration(a2, a1);
+       if (!paused) {
 
-       a1.velocity = add(a1.velocity, multiply(acc1, dt));
-       a1.position = add(a1.position, multiply(a1.velocity, dt));
+           PhysicsVector3 acc1 = gravitationalAcceleration(a1, a2);
+           PhysicsVector3 acc2 = gravitationalAcceleration(a2, a1);
 
-       a2.velocity = add(a2.velocity, multiply(acc2, dt));
-       a2.position = add(a2.position, multiply(a2.velocity, dt));
+           a1.velocity = add(a1.velocity, multiply(acc1, dt));
+           a1.position = add(a1.position, multiply(a1.velocity, dt));
+
+           a2.velocity = add(a2.velocity, multiply(acc2, dt));
+           a2.position = add(a2.position, multiply(a2.velocity, dt));
+       }
 
        updateCamera();
 
