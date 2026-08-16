@@ -76,6 +76,7 @@ I want to use it to explore things like:
 
 - [x] 3D visualization
 - [x] Camera
+- [x] Free Camera
 - [x] Bodies rendered as spheres/points
 - [x] Trails
 - [ ] Adjustable timestep
