@@ -35,7 +35,13 @@ void updateCamera() {
     PhysicsVector3 forward = {
         camera.target.x - camera.position.x,
         camera.target.y - camera.position.y,
-        camera.target.z- camera.position.z
+        camera.target.z - camera.position.z
+    };
+
+    PhysicsVector3 right = {
+        -forward.z,
+        0,
+        forward.x
     };
 
     double length = magnitude(forward);
@@ -44,8 +50,13 @@ void updateCamera() {
     forward.y /= length;
     forward.z /= length;
 
-    float speed = 0.01f;
+    double sideLength = magnitude(right);
 
+    right.x /= sideLength;
+    right.y /= sideLength;
+    right.z /= sideLength;
+
+    float speed = 0.01f;
 
     if (IsKeyDown(KEY_W)) {
         camera.position.x += forward.x * speed;
@@ -64,15 +75,27 @@ void updateCamera() {
         camera.target.x -= forward.x * speed;
         camera.target.y -= forward.y * speed;
         camera.target.z -= forward.z * speed;
-
     }
 
-    // if (IsKeyDown(KEY_A)) {
-    //     camera.position.x -= 0.01f;
-    // }
-    // if (IsKeyDown(KEY_D)) {
-    //     camera.position.x += 0.01f;
-    // }
+    if (IsKeyDown(KEY_A)) {
+        camera.position.x -= right.x * speed;
+        camera.position.y -= right.y * speed;
+        camera.position.z -= right.z * speed;
+
+        camera.target.x -= right.x * speed;
+        camera.target.y -= right.y * speed;
+        camera.target.z -= right.z * speed;
+    }
+    if (IsKeyDown(KEY_D)) {
+        camera.position.x += right.x * speed;
+        camera.position.y += right.y * speed;
+        camera.position.z += right.z * speed;
+
+        camera.target.x += right.x * speed;
+        camera.target.y += right.y * speed;
+        camera.target.z += right.z * speed;
+    }
+
 }
 
 void renderFrame(const Body &a1, const Body &a2) {
@@ -92,6 +115,7 @@ void renderFrame(const Body &a1, const Body &a2) {
             static_cast<float>(a2.position.y),
             static_cast<float>(a2.position.z)
         };
+
 
         trail1.push_back(position1);
         trail2.push_back(position2);
@@ -118,5 +142,3 @@ void renderFrame(const Body &a1, const Body &a2) {
     EndDrawing();
 
 }
-
-
