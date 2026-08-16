@@ -79,8 +79,8 @@ I want to use it to explore things like:
 - [x] Free Camera
 - [x] Bodies rendered as spheres/points
 - [x] Trails
-- [ ] Adjustable timestep
-- [ ] Pause/reset
+- [x] Pause/play
+- [x] Reset
 
 ### Phase 3
 
