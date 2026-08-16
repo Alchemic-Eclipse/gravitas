@@ -8,12 +8,13 @@ bool paused = false;
 
 int main() {
 
+   double dt = 0.005; // sec
 
+    Body initialA1{1, 0, 0, 0, 0, -0.2, 0};
+    Body initialA2{1, 10, 0, 0, 0, 0.1, -0.1};
 
-   double dt = -0.005; // sec
-
-   Body a1{1,0,0,0,0,-0.2,0};
-   Body a2{1,10,0,0,0,0.1,-0.1};
+    Body a1 = initialA1;
+    Body a2 = initialA2;
 
    initializeRenderer();
 
@@ -21,6 +22,13 @@ int main() {
 
        if (IsKeyPressed(KEY_SPACE)) {
            paused = !paused;
+       }
+
+       if (IsKeyPressed(KEY_R)) {
+           a1 = initialA1;
+           a2 = initialA2;
+
+           resetTrails();
        }
 
        // Physics Update
@@ -44,5 +52,5 @@ int main() {
 
    closeRenderer();
    return 0;
-    
+
 }

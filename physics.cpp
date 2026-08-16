@@ -1,7 +1,6 @@
 #include "physics.h"
 #include <cmath>
 
-
 PhysicsVector3 add(PhysicsVector3 a, PhysicsVector3 b) {
     PhysicsVector3 result{};
 
@@ -10,6 +9,7 @@ PhysicsVector3 add(PhysicsVector3 a, PhysicsVector3 b) {
     result.z = a.z + b.z;
     return result;
 }
+
 PhysicsVector3 subtract(PhysicsVector3 a, PhysicsVector3 b) {
     PhysicsVector3 result{};
 

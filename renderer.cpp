@@ -116,7 +116,6 @@ void renderFrame(const Body &a1, const Body &a2) {
             static_cast<float>(a2.position.z)
         };
 
-
         trail1.push_back(position1);
         trail2.push_back(position2);
     }
@@ -141,4 +140,9 @@ void renderFrame(const Body &a1, const Body &a2) {
     EndMode3D();
     EndDrawing();
 
+}
+
+void resetTrails() {
+    trail1.clear();
+    trail2.clear();
 }

@@ -7,3 +7,4 @@ void renderBody(const Body& body);
 void closeRenderer();
 void updateCamera();
 void renderFrame(const Body& a1, const Body& a2);
+void resetTrails();
