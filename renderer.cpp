@@ -10,7 +10,7 @@ void initializeRenderer() {
     InitWindow(1450, 800, "Gravitas");
 
     camera.position = {5.0f, 5.0f, 20.0f};
-    camera.target = {5.0f, 0.0f, -10.0f};
+    camera.target = {5.0f, 0.0f, -100.0f};
     camera.up = {0.0f, 1.0f, 0.0f};
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -28,6 +28,51 @@ void renderBody(const Body &body) {
 
 void closeRenderer() {
     CloseWindow();
+}
+
+void updateCamera() {
+
+    PhysicsVector3 forward = {
+        camera.target.x - camera.position.x,
+        camera.target.y - camera.position.y,
+        camera.target.z- camera.position.z
+    };
+
+    double length = magnitude(forward);
+
+    forward.x /= length;
+    forward.y /= length;
+    forward.z /= length;
+
+    float speed = 0.01f;
+
+
+    if (IsKeyDown(KEY_W)) {
+        camera.position.x += forward.x * speed;
+        camera.position.y += forward.y * speed;
+        camera.position.z += forward.z * speed;
+
+        camera.target.x += forward.x * speed;
+        camera.target.y += forward.y * speed;
+        camera.target.z += forward.z * speed;
+    }
+    if (IsKeyDown(KEY_S)) {
+        camera.position.x -= forward.x * speed;
+        camera.position.y -= forward.y * speed;
+        camera.position.z -= forward.z * speed;
+
+        camera.target.x -= forward.x * speed;
+        camera.target.y -= forward.y * speed;
+        camera.target.z -= forward.z * speed;
+
+    }
+
+    // if (IsKeyDown(KEY_A)) {
+    //     camera.position.x -= 0.01f;
+    // }
+    // if (IsKeyDown(KEY_D)) {
+    //     camera.position.x += 0.01f;
+    // }
 }
 
 void renderFrame(const Body &a1, const Body &a2) {
@@ -74,38 +119,4 @@ void renderFrame(const Body &a1, const Body &a2) {
 
 }
 
-void updateCamera() {
 
-    PhysicsVector3 forward = {
-        camera.target.x - camera.position.x,
-        camera.target.y - camera.position.y,
-        camera.target.z- camera.position.z
-    };
-
-    double length = magnitude(forward);
-
-    forward.x /= length;
-    forward.y /= length;
-    forward.z /= length;
-
-    float speed = 0.01f;
-
-
-    if (IsKeyDown(KEY_W)) {
-        camera.position.z += forward.z * speed;
-        camera.target.z += forward.z * speed;
-    }
-    if (IsKeyDown(KEY_S)) {
-        camera.position.z -= forward.z * speed;
-        camera.target.z -= forward.z * speed;
-
-
-    }
-
-    // if (IsKeyDown(KEY_A)) {
-    //     camera.position.x -= 0.01f;
-    // }
-    // if (IsKeyDown(KEY_D)) {
-    //     camera.position.x += 0.01f;
-    // }
-}
