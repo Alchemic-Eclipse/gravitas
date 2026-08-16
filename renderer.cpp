@@ -9,8 +9,8 @@ std::vector<Vector3> trail2;
 void initializeRenderer() {
     InitWindow(1450, 800, "Gravitas");
 
-    camera.position = {5.0f, 10.0f, 10.0f};
-    camera.target = {5.0f, 0.0f, -4.9f};
+    camera.position = {5.0f, 5.0f, 20.0f};
+    camera.target = {5.0f, 0.0f, -10.0f};
     camera.up = {0.0f, 1.0f, 0.0f};
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -67,7 +67,7 @@ void renderFrame(const Body &a1, const Body &a2) {
         DrawLine3D(trail2[i], trail2[i + 1], BLUE);
     }
 
-    // DrawGrid(20, 1.0f);
+    DrawGrid(20, 1.0f);
 
     EndMode3D();
     EndDrawing();
@@ -93,9 +93,12 @@ void updateCamera() {
 
     if (IsKeyDown(KEY_W)) {
         camera.position.z += forward.z * speed;
+        camera.target.z += forward.z * speed;
     }
     if (IsKeyDown(KEY_S)) {
         camera.position.z -= forward.z * speed;
+        camera.target.z -= forward.z * speed;
+
 
     }
 
