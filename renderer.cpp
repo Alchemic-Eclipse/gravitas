@@ -35,7 +35,7 @@ void renderFrame(const Body &a1, const Body &a2) {
     static int frameCounter = 0;
     frameCounter++;
 
-    if (frameCounter % 20 == 0) {
+    if (frameCounter % 50 == 0) {
         Vector3 position1 = {
             static_cast<float>(a1.position.x),
             static_cast<float>(a1.position.y),
@@ -67,7 +67,7 @@ void renderFrame(const Body &a1, const Body &a2) {
         DrawLine3D(trail2[i], trail2[i + 1], BLUE);
     }
 
-    DrawGrid(20, 1.0f);
+    // DrawGrid(20, 1.0f);
 
     EndMode3D();
     EndDrawing();
@@ -75,15 +75,34 @@ void renderFrame(const Body &a1, const Body &a2) {
 }
 
 void updateCamera() {
+
+    PhysicsVector3 forward = {
+        camera.target.x - camera.position.x,
+        camera.target.y - camera.position.y,
+        camera.target.z- camera.position.z
+    };
+
+    double length = magnitude(forward);
+
+    forward.x /= length;
+    forward.y /= length;
+    forward.z /= length;
+
+    float speed = 0.01f;
+
+
     if (IsKeyDown(KEY_W)) {
-        camera.position.z -= 0.01f;
+        camera.position.z += forward.z * speed;
     }
     if (IsKeyDown(KEY_S)) {
-        camera.position.z += 0.01f;
-    }    if (IsKeyDown(KEY_A)) {
-        camera.position.x -= 0.01f;
+        camera.position.z -= forward.z * speed;
+
     }
-    if (IsKeyDown(KEY_D)) {
-        camera.position.x += 0.01f;
-    }
+
+    // if (IsKeyDown(KEY_A)) {
+    //     camera.position.x -= 0.01f;
+    // }
+    // if (IsKeyDown(KEY_D)) {
+    //     camera.position.x += 0.01f;
+    // }
 }
