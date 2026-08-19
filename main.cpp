@@ -10,7 +10,7 @@ int main() {
 
    double dt = 0.005; // sec
 
-    Body initialA1{1, 0, 0, 0, 0, -0.2, 0};
+    Body initialA1{1, 0, 0, 0, 0.2, 0.25, 0};
     Body initialA2{1, 10, 0, 0, 0, 0.1, -0.1};
 
     Body a1 = initialA1;

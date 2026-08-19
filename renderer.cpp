@@ -10,7 +10,7 @@ void initializeRenderer() {
     InitWindow(1450, 800, "Gravitas");
 
     camera.position = {5.0f, 5.0f, 20.0f};
-    camera.target = {5.0f, 0.0f, -100.0f};
+    camera.target = {5.0f, 5.0f, 19.0f};
     camera.up = {0.0f, 1.0f, 0.0f};
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -56,6 +56,7 @@ void updateCamera() {
     right.y /= sideLength;
     right.z /= sideLength;
 
+    // Translation
     float speed = 0.01f;
 
     if (IsKeyDown(KEY_W)) {
@@ -94,6 +95,34 @@ void updateCamera() {
         camera.target.x += right.x * speed;
         camera.target.y += right.y * speed;
         camera.target.z += right.z * speed;
+    }
+
+    // Rotation (yaw)
+    float angle = 0.00025f;
+
+    if (IsKeyDown(KEY_RIGHT)) {
+        double newX = forward.x - forward.z * angle;
+        double newZ = forward.z + forward.x * angle;
+
+        forward.x = newX;
+        forward.z = newZ;
+
+        camera.target.x = camera.position.x + forward.x;
+        camera.target.y = camera.position.y + forward.y;
+        camera.target.z = camera.position.z + forward.z;
+    }
+
+    if (IsKeyDown(KEY_LEFT)) {
+        double newX = forward.x + forward.z * angle;
+        double newZ = forward.z - forward.x * angle;
+
+        forward.x = newX;
+        forward.z = newZ;
+
+        camera.target.x = camera.position.x + forward.x;
+        camera.target.y = camera.position.y + forward.y;
+        camera.target.z = camera.position.z + forward.z;
+
     }
 
 }
