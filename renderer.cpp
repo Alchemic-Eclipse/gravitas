@@ -57,7 +57,7 @@ void updateCamera() {
     right.z /= sideLength;
 
     // Translation
-    float speed = 0.01f;
+    float speed = 0.005f;
 
     if (IsKeyDown(KEY_W)) {
         camera.position.x += forward.x * speed;
@@ -98,7 +98,7 @@ void updateCamera() {
     }
 
     // Rotation (yaw)
-    float angle = 0.00025f;
+    float angle = 0.000255f;
 
     if (IsKeyDown(KEY_RIGHT)) {
         double newX = forward.x - forward.z * angle;

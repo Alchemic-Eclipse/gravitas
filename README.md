@@ -77,10 +77,12 @@ I want to use it to explore things like:
 - [x] 3D visualization
 - [x] Camera
 - [x] Free Camera
+- [x] Horizontal camera rotation
 - [x] Bodies rendered as spheres/points
 - [x] Trails
 - [x] Pause/play
 - [x] Reset
+
 
 ### Phase 3
 
