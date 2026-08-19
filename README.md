@@ -105,7 +105,7 @@ I want to use it to explore things like:
 ## Tech Stack
 - C++
 - CMake
-- [Visualization library]
+- Raylib
 
 ## Why C++?
 
