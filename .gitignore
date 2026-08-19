@@ -70,3 +70,5 @@ Testing/
 
 .idea/
 cmake-build-*/
+/.vscode/c_cpp_properties.json
+/.vscode/tasks.json
