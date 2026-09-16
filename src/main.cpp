@@ -1,17 +1,17 @@
 #include <iostream>
 #include <raylib.h>
 
-#include "physics.h"
-#include "renderer.h"
+#include "../include/physics.h"
+#include "../include/renderer.h"
 
 bool paused = false;
 
 int main() {
 
-   double dt = 0.005; // sec
+   double dt = 0.015; // sec
 
-    Body initialA1{100,  5, 0, 0, 0.1,  0.25, -0.22};
-    Body initialA2{1, -5, 0, 0, -0.1, -0.25, 0.12};
+    Body initialA1{3,  5, 0, 0, 0,  0.1, 0};
+    Body initialA2{1, -5, 0, 0, -0.1, 0.1, 0.12};
 
     Body a1 = initialA1;
     Body a2 = initialA2;

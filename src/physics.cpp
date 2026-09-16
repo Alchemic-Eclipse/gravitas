@@ -1,4 +1,4 @@
-#include "physics.h"
+#include "../include/physics.h"
 #include <cmath>
 
 PhysicsVector3 add(PhysicsVector3 a, PhysicsVector3 b) {
@@ -33,7 +33,7 @@ double magnitude(PhysicsVector3 v) {
     return c;
 }
 
-PhysicsVector3 gravitationalAcceleration(Body a, Body b){
+PhysicsVector3 gravitationalAcceleration(Body a, Body b) {
     PhysicsVector3 r = subtract(b.position, a.position);  // Vector from A to B
     PhysicsVector3 direction = multiply(r, 1.0/magnitude(r));
 
